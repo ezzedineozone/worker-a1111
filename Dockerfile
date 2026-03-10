@@ -26,6 +26,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     git reset --hard ${A1111_RELEASE} && \
     mkdir -p repositories && \
     git clone https://github.com/CompVis/stable-diffusion.git repositories/stable-diffusion-stability-ai && \
+    cd repositories/stable-diffusion-stability-ai && git remote set-url origin https://github.com/CompVis/stable-diffusion.git && cd ../.. && \
     git clone https://github.com/Stability-AI/generative-models.git repositories/generative-models && \
     git clone https://github.com/crowsonkb/k-diffusion.git repositories/k-diffusion && \
     git clone https://github.com/AUTOMATIC1111/stable-diffusion-webui-assets.git repositories/stable-diffusion-webui-assets && \
