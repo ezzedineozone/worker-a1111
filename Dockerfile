@@ -30,6 +30,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
     cd stable-diffusion-webui && \
     git reset --hard ${A1111_RELEASE} && \
     sed -i 's|https://github.com/Stability-AI/stablediffusion.git|https://github.com/CompVis/stable-diffusion.git|g' modules/launch_utils.py && \
+    sed -i 's|cf1d67a6fd5ea1aa600c4df58e5b47da45f6bdbf|69ae4b35e0a0f6ee1af8bb9a5d0016ccb27e36dc|g' modules/launch_utils.py && \
     pip install xformers && \
     pip install -r requirements_versions.txt && \
     python -c "from launch import prepare_environment; prepare_environment()" --skip-torch-cuda-test
