@@ -45,5 +45,6 @@ COPY test_input.json .
 
 ADD src .
 
-RUN chmod +x /start.sh
+RUN sed -i 's/\r$//' /start.sh && sed -i 's/\r$//' /handler.py && chmod +x /start.sh
+
 CMD /start.sh
